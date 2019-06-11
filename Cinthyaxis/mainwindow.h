@@ -23,7 +23,7 @@ public:
     QString acumulador;
     bool seAgrega(void);
     QList<QString> palabraR;
-    bool verificarReservada(QString acumulador);
+    void verificarReservada(QString acumulador);
     int compara;
     bool esReservada;
     QChar palR;
