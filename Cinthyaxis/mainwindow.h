@@ -27,7 +27,7 @@ public:
     int compara;
     bool esReservada;
     QChar palR;
-    void aCinthyaxis();
+    bool aCinthyaxis();
     QStack<int> pila;
     int produccion;
     int identificaReservada();

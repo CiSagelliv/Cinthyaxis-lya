@@ -6,9 +6,65 @@
 
 #ifndef SIMBOLOS
 #define SIMBOLOS
+    #define PROGRAM 0
+    #define DECLARA_LIB 1
+    #define DECLARA 2
+    #define A 3
+    #define AP 4 //AP -> A' 
+    #define TIPO 5
+    #define ESTATUTOS 6
+    #define B 7
+    #define EST_ASIG 8
+    #define EXPR 9
+    #define EXPRP 10 // EXPRP -> EXPR'
+    #define EXPR2 11
+    #define EXPR2P 12 // EXPR2P -> EXPR2'
+    #define EXPR3 13
+    #define EXPR4 14
+    #define EXPR4P 15 // EXPR4P -> EXPR4'
+    #define EXPR5 16
+    #define EXPR5P 17 // EXPR5P -> EXPR5'
+    #define TERM 18
+    #define TERMP 19 // TERMP -> TERM'
+    #define FACT 20
+    #define OPREL 21
+    #define EST_IF 22
+    #define EST_IFP 23 // EST_IFP -> EST_IF'
+    #define EST_WHILE 24
+    #define EST_FOR 25
+    #define EST_ENTER 26
+    #define EST_WRITE 27
+    #define D 28
+    #define DP 29 // DP -> D'
+    #define EST_READ 30
+    #define E 31
+    #define EP 32 // EP -> E'
+        
     #define RESERVADA 100
-
-
+    #define CLASS 200
+    #define ID 201
+    #define BEGIN 202
+    #define END 203
+    #define IMPORT 204
+    #define DEF 205
+    #define AS 206
+    #define INTEGER 207
+    #define FLOAT 208
+    #define CHAR 209
+    #define STRING 210
+    #define BOOLEAN 211
+    #define IF 212
+    #define ELSE 213
+    #define ENDIF 214
+    #define WHILE 215
+    #define ENDWHILE 216
+    #define FOR 217
+    #define ENDFOR 218
+    #define ENTER 219
+    #define WRITE 220
+    #define READ 221
+    //Aquí faltan las palabras reservadas de librería
+    #define ENOF 550
 #endif
 
 static int matriz[22][30]= {
@@ -90,7 +146,8 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::analiza(){
-    pila.push(0);
+    pila.push(ENOF);
+    pila.push(PROGRAM);
     for(int i=0;i<cadena.length();i++){
             aCaracter = cadena[i].toLatin1();
             columna = relacionaCaracteres(aCaracter);
@@ -102,7 +159,7 @@ void MainWindow::analiza(){
                 i--;
             }
             verificarReservada(acumulador);
-            aCinthyaxis();
+            if (!aCinthyaxis()) return;
             ui->AreaTokens->appendPlainText(tokens(estado));
             estado=0;
             acumulador = "";
@@ -116,6 +173,7 @@ void MainWindow::analiza(){
             ui->AreaErrores->appendPlainText(errores(estado));
             estado=0;
             acumulador = "";
+            return;
         } else if (estado > 0 && estado < 100) {
             acumulador += QString(aCaracter);
         }
@@ -444,7 +502,8 @@ bool MainWindow::verificarReservada(QString ac){
             ||(ac=="endfor")||(ac=="while")||(ac=="endwhile")
             ||(ac=="function")||(ac=="endfunction")||(ac=="import")
             ||(ac=="null")||(ac=="read")||(ac=="write")
-            ||(ac=="enter")||(ac=="principal")||(ac=="lye")||(ac=="io")){
+            ||(ac=="enter")||(ac=="principal")||(ac=="lye")||(ac=="io")
+            ||(ac=="class")){
                 estado = 100;
             } else {
                 estado= 101;
@@ -452,36 +511,46 @@ bool MainWindow::verificarReservada(QString ac){
        }
 }
 
-void MainWindow::aCinthyaxis(){
+bool MainWindow::aCinthyaxis(){
     int simbolo = pila.pop();
     if (estado == RESERVADA) identificaReservada();
 
+    while(true){
     if (simbolo == estado){
-        return;
+        return true;
     } else if (simbolo > 100) {
-        errores(estado);
+        errorSint(669);
+        return false;
     } else {
         columna = afinaToken(estado);
         produccion = matrizSint[simbolo][columna];
         if (produccion > 600){
-            errorSint(estado);
+            errorSint(produccion);
+            return false;
         } else {
             //si jala
+            // si es un terminal pushear el token y si es un no terminal
+            // pushear la fila
+            //aquí van cada una de las producciones
             switch (produccion) {
                 case 0:
-                    pila.push(afinaToken(END));
+                    pila.push(END);
                 break;
+                case 50:
+                    pila.push(107); //token
+                    pila.push(/*aqui va el número de fila*/); //fila
 
             }
         }
     }
+  }
 
 }
 
 
 int MainWindow::identificaReservada() {
         if(cadena == "class"){
-            estado = 200;
+            estado = CLASS;
         }else if /*siguele con los demás*/ {
     }
 }
@@ -489,7 +558,7 @@ int MainWindow::identificaReservada() {
 //función pura
 int afinaToken(int estado){ //columna
     switch(estado){
-        case 200:
+        case CLASS:
             return 0;
            break;
             //sigue con los demás
@@ -564,6 +633,8 @@ QString MainWindow::errorSint(int er){
         return acumulador + "" +  "Error 631: 404 not found ";
         case 632:
         return acumulador + "" +  "Error 632: 404 not found ";
+        case 669:
+        return acumulador + "" +  "Error 669: No coincidieron ";
     }
 }
 
