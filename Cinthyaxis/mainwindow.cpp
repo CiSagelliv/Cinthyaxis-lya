@@ -1043,8 +1043,50 @@ QString MainWindow::gramema (int gram){
             return "Producción: E";
         case EP:
             return "Producción: E'";
-
-
+        case CLASS:
+            return "Palabra reservada: class"; 
+        case BEGIN:
+            return "Palabra reservada:  begin"; 
+        case END:
+            return "Palabra reservada: end "; 
+        case IMPORT:
+            return "Palabra reservada: imrpot "; 
+        case DEF:
+            return "Palabra reservada:  def"; 
+        case AS:
+            return "Palabra reservada: as "; 
+        case INTEGER:
+            return "Palabra reservada: integer"; 
+        case FLOTANTE:
+            return "Palabra reservada: float"; 
+        case CARACTER:
+            return "Palabra reservada: char"; 
+        case STRING:
+            return "Palabra reservada: String"; 
+        case BOOLEANO:
+            return "Palabra reservada: boolean"; 
+        case IF:
+            return "Palabra reservada: if "; 
+        case ELSE:
+            return "Palabra reservada: else "; 
+        case ENDIF:
+            return "Palabra reservada: endif"; 
+        case WHILE:
+            return "Palabra reservada: while"; 
+        case ENDWHILE:
+            return "Palabra reservada: endwhile"; 
+        case FOR:
+            return "Palabra reservada: for "; 
+        case ENDFOR:
+            return "Palabra reservada: endfor"; 
+        case ENTER:
+            return "Palabra reservada: enter"; 
+        case WRITE:
+            return "Palabra reservada:  write"; 
+        case READ:
+            return "Palabra reservada: read"; 
+        case LYE:
+            return "Palabra reservada: lye"; 
         default: return "Error";
     }
 };
