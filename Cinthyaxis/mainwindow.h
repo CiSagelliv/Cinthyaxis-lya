@@ -23,10 +23,10 @@ public:
     QString tokens(int);
     QString errores(int);
     char aCaracter;
-    QString acumulador;
+    QString lexema;
     bool seAgrega(void);
     QList<QString> palabraR;
-    void verificarReservada(QString acumulador);
+    void verificarReservada(QString lexema);
     int compara;
     bool esReservada;
     QChar palR;

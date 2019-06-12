@@ -4,6 +4,7 @@
 
 #ifndef SIMBOLOS
 #define SIMBOLOS
+    //Aqui van las producciones
     #define PROGRAM 0
     #define DECLARA_LIB 1
     #define DECLARA 2
@@ -37,61 +38,95 @@
     #define EST_READ 30
     #define E 31
     #define EP 32 // EP -> E'
-        
-    #define RESERVADA 100
+
+    //Palabras reservadas        
     #define CLASS 200
-    #define ID 201
-    #define BEGIN 202
-    #define END 203
-    #define IMPORT 204
-    #define DEF 205
-    #define AS 206
-    #define INTEGER 207
-    #define FLOTANTE 208
-    #define CARACTER 209
-    #define STRING 210
-    #define BOOLEANO 211
-    #define IF 212
-    #define ELSE 213
-    #define ENDIF 214
-    #define WHILE 215
-    #define ENDWHILE 216
-    #define FOR 217
-    #define ENDFOR 218
-    #define ENTER 219
-    #define WRITE 220
-    #define READ 221
+    #define BEGIN 201
+    #define END 202
+    #define IMPORT 203
+    #define DEF 204
+    #define AS 205
+    #define INTEGER 206
+    #define FLOTANTE 207
+    #define CARACTER 208
+    #define STRING 219
+    #define BOOLEANO 210
+    #define IF 211
+    #define ELSE 212
+    #define ENDIF 213
+    #define WHILE 214
+    #define ENDWHILE 215
+    #define FOR 216
+    #define ENDFOR 217
+    #define ENTER 218
+    #define WRITE 219
+    #define READ 220
+    #define LYE 221
     //Aquí faltan las palabras reservadas de librería
     #define ENOF 550
+    
+        //tokens 
+    #define RESERVADA 100
+    #define IDENTIFICADOR 101
+    #define CONST_ENTERA 102
+    #define CONST_REAL 103
+    #define CONST_NOTACION 104
+    #define CONST_CARACTER 105
+    #define CONST_STRING 106
+    #define SUMA 107
+    #define RESTA 108
+    #define MULTIPLICACION 109
+    #define DIVISION 110
+    #define MODULO 111
+    #define COMENTARIO 112
+    #define AND 113
+    #define OR 114
+    #define NOT 115
+    #define DIFERENTE 116
+    #define IGUAL 117
+    #define MAYOR 118
+    #define MAYOR_IGUAL 119
+    #define MENOR 120
+    #define MENOR_IGUAL 121
+    #define ASIGNACION 122
+    #define DOS_PUNTOS 123
+    #define PUNTO_COMA 124
+    #define PUNTO 125
+    #define PARENTESIS_ABRE 126
+    #define PARENTESIS_CIERRA 127
+    #define LLAVE_ABRE 128
+    #define LLAVE_CIERRA 129
+    #define ID_LIBRERIA 130
+    #define COMA 131
 #endif
 
 static int matriz[25][32]= {
-{2,   1,   4,   500, 125, 2,   1,   1,   1,   107, 108, 0,   0,   0,   10,  12,  109, 13,  16,  17,  18,  19,  21,  20,  123, 124, 126, 127, 128, 129, 111, 509},
-{2,   1,   2,   3,   22,  2,   1,   1,   1,   100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100},
-{2,   2,   2,   3,   101, 2,   2,   2,   2,   101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101},
-{2,   2,   2,   501, 501, 2,   2,   2,   2,   501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501},
-{102, 102, 4,   102, 5,   102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102},
-{502, 502, 6,   502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502},
-{103, 103, 6,   103, 103, 7,   7,   103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103},
-{503, 503, 9,   503, 503, 503, 503, 503, 503, 8,   8,   503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503},
-{504, 504, 9,   504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504},
-{104, 104, 9,   104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104},
-{11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  505, 11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11},
-{506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 105, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506},
-{12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  106, 12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12},
-{110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 14,  110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110},
-{14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  15,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14},
-{14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  15,  112, 14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14},
-{507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 113, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507},
-{508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 114, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508},
-{115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 116, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115},
-{122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 117, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122},
-{118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 119, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118},
-{120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 121, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120},
-{510, 510, 510, 510, 510, 510, 510, 23,  510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510},
-{510, 510, 510, 510, 510, 510, 510, 510, 24,  510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510},
-{510, 510, 510, 510, 510, 510, 130, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510}
-};
+    {2,   1,   4,   500, 125, 2,   1,   1,   1,   107, 108, 0,   0,   0,   10,  12,  109, 13,  16,  17,  18,  19,  21,  20,  123, 124, 126, 127, 128, 129, 111, 509},
+    {2,   1,   2,   3,   22,  2,   1,   1,   1,   100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100},
+    {2,   2,   2,   3,   101, 2,   2,   2,   2,   101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101},
+    {2,   2,   2,   501, 501, 2,   2,   2,   2,   501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501},
+    {102, 102, 4,   102, 5,   102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102},
+    {502, 502, 6,   502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502},
+    {103, 103, 6,   103, 103, 7,   7,   103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103, 103},
+    {503, 503, 9,   503, 503, 503, 503, 503, 503, 8,   8,   503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503},
+    {504, 504, 9,   504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504},
+    {104, 104, 9,   104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104},
+    {11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  505, 11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11},
+    {506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 105, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506},
+    {12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  106, 12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12},
+    {110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 14,  110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110},
+    {14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  15,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14},
+    {14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  15,  112, 14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14},
+    {507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 113, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507},
+    {508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 114, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508},
+    {115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 116, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115},
+    {122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 117, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122},
+    {118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 119, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118},
+    {120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 121, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120},
+    {510, 510, 510, 510, 510, 510, 510, 23,  510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510},
+    {510, 510, 510, 510, 510, 510, 510, 510, 24,  510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510},
+    {510, 510, 510, 510, 510, 510, 130, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510}
+    };
 
 static int matrizSint[33][48] = {
     {1,600,600,600,1,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600},
@@ -156,29 +191,29 @@ void MainWindow::analiza(){
             //std::cout << std::to_string(estado) << std::endl;
         if (estado >= 100 && estado <= 199){
             if (seAgrega()){
-                acumulador += QString(aCaracter);
+                lexema += QString(aCaracter);
             } else {
                 i--;
             }
-            verificarReservada(acumulador);
-            std::cout << acumulador.toStdString() << std::endl;
+            verificarReservada(lexema);
+            std::cout << lexema.toStdString() << std::endl;
             if (!aCinthyaxis()) return;
             ui->AreaTokens->appendPlainText(tokens(estado));
             estado=0;
-            acumulador = "";
+            lexema = "";
 
         } else if (estado >= 500 && estado <= 550) {
             if (seAgrega()){
-                acumulador += QString(aCaracter);
+                lexema += QString(aCaracter);
             } else {
                 i--;
             }
             ui->AreaErrores->appendPlainText(errores(estado));
             estado=0;
-            acumulador = "";
+            lexema = "";
             return;
         } else if (estado > 0 && estado < 100) {
-            acumulador += QString(aCaracter);
+            lexema += QString(aCaracter);
         }
     }
     if (pila.empty()){
@@ -285,70 +320,70 @@ if (c >= '0' && c<= '9'){
 }
 
 QString MainWindow::tokens(int t){
-    return acumulador + significado(t);
+    return lexema + significado(t);
     switch(t){
-        case 100:
-        return acumulador + ":Palabra reservada";
-        case 101:
-        return acumulador + ":Identificador";
-        case 102:
-        return acumulador + ":Constante entera";
-        case 103:
-        return acumulador + ":Constante real";
-        case 104:
-        return acumulador + ":Constante con notación cientifica";
-        case 105:
-        return acumulador + ":Constante caracter";
-        case 106:
-        return acumulador + ":Constante string";
-        case 107:
-        return acumulador + ":Suma";
-        case 108:
-        return acumulador + ":Resta";
-        case 109:
-        return acumulador + ":Multiplicación";
-        case 110:
-        return acumulador + ":División";
-        case 111:
-        return acumulador + ":Módulo";
-        case 112:
-        return acumulador + ":Comentario";
-        case 113:
-        return acumulador + ":AND";
-        case 114:
-        return acumulador + ":OR";
-        case 115:
-        return acumulador + ":NOT";
-        case 116:
-        return acumulador + ":Diferente";
-        case 117:
-        return acumulador + ":Igual";
-        case 118:
-        return acumulador + ":Mayor";
-        case 119:
-        return acumulador + ":Mayor o igual";
-        case 120:
-        return acumulador + ":Menor";
-        case 121:
-        return acumulador + ":Menor o igual";
-        case 122:
-        return acumulador + ":Asignación";
-        case 123:
-        return acumulador + ":Dos puntos";
-        case 124:
-        return acumulador + ":Punto y coma";
-        case 125:
-        return acumulador + ":Punto";
-        case 126:
-        return acumulador + ":Paréntesis que abre";
-        case 127:
-        return acumulador + ":Paréntesis que cierra";
-        case 128:
-        return acumulador + ":Llave que abre";
-        case 129:
-        return acumulador + ":Llave que cierra";
-        case 130:
-        return acumulador + ":Identificador de librería";
+        case RESERVADA:
+        return lexema + ":Palabra reservada";
+        case IDENTIFICADOR:
+        return lexema + ":Identificador";
+        case CONST_ENTERA:
+        return lexema + ":Constante entera";
+        case CONST_REAL:
+        return lexema + ":Constante real";
+        case CONST_NOTACION:
+        return lexema + ":Constante con notación cientifica";
+        case CONST_CARACTER:
+        return lexema + ":Constante caracter";
+        case CONST_STRING:
+        return lexema + ":Constante string";
+        case SUMA:
+        return lexema + ":Suma";
+        case RESTA:
+        return lexema + ":Resta";
+        case MULTIPLICACION:
+        return lexema + ":Multiplicación";
+        case DIVISION:
+        return lexema + ":División";
+        case MODULO:
+        return lexema + ":Módulo";
+        case COMENTARIO:
+        return lexema + ":Comentario";
+        case AND:
+        return lexema + ":AND";
+        case OR:
+        return lexema + ":OR";
+        case NOT:
+        return lexema + ":NOT";
+        case DIFERENTE:
+        return lexema + ":Diferente";
+        case IGUAL:
+        return lexema + ":Igual";
+        case MAYOR:
+        return lexema + ":Mayor";
+        case MAYOR_IGUAL:
+        return lexema + ":Mayor o igual";
+        case MENOR:
+        return lexema + ":Menor";
+        case MENOR_IGUAL:
+        return lexema + ":Menor o igual";
+        case ASIGNACION:
+        return lexema + ":Asignación";
+        case DOS_PUNTOS:
+        return lexema + ":Dos puntos";
+        case PUNTO_COMA:
+        return lexema + ":Punto y coma";
+        case PUNTO:
+        return lexema + ":Punto";
+        case PARENTESIS_ABRE:
+        return lexema + ":Paréntesis que abre";
+        case PARENTESIS_CIERRA:
+        return lexema + ":Paréntesis que cierra";
+        case LLAVE_ABRE:
+        return lexema + ":Llave que abre";
+        case LLAVE_CIERRA:
+        return lexema + ":Llave que cierra";
+        case ID_LIBRERIA:
+        return lexema + ":Identificador de librería";
         default: return "Error";
     }
 }
@@ -356,27 +391,27 @@ QString MainWindow::tokens(int t){
 QString MainWindow::errores(int e){
     switch(e){
         case 500:
-        return acumulador + " Error 500: no es una constante numérica";
+        return lexema + " Error 500: no es una constante numérica";
         case 501:
-        return acumulador + " Error 501: esperaba caracter después de _ ";
+        return lexema + " Error 501: esperaba caracter después de _ ";
         case 502:
-        return acumulador + " Error 502: esperaba digito después de .";
+        return lexema + " Error 502: esperaba digito después de .";
         case 503:
-        return acumulador + " Error 503: esperaba digito +, - ";
+        return lexema + " Error 503: esperaba digito +, - ";
         case 504:
-        return acumulador + " Error 504: esperaba digito después de signo +,- ";
+        return lexema + " Error 504: esperaba digito después de signo +,- ";
         case 505:
-        return acumulador + " Error 505: esperaba digito diferente a comilla simple ";
+        return lexema + " Error 505: esperaba digito diferente a comilla simple ";
         case 506:
-        return acumulador + " Error 506: esperaba comilla después de caracter ";
+        return lexema + " Error 506: esperaba comilla después de caracter ";
         case 507:
-        return acumulador + " Error 507: esperaba signo de & después de & ";
+        return lexema + " Error 507: esperaba signo de & después de & ";
         case 508:
-        return acumulador + " Error 508: esperaba signo de | después de | ";
+        return lexema + " Error 508: esperaba signo de | después de | ";
         case 509:
-        return acumulador + " Error 509: 404 not found ";
+        return lexema + " Error 509: 404 not found ";
         case 510:
-        return acumulador + " Error 510: !.lye";
+        return lexema + " Error 510: !.lye";
         default: return "Error";
     }
 }
@@ -536,7 +571,7 @@ bool MainWindow::aCinthyaxis(){
 
     while(true){
         for (int i: pila){
-          std::cout << significado(i) + " ";
+          //std::cout << significado(i) + " ";
        }
        std::cout << std::endl;
     if (simbolo == estado){
@@ -557,8 +592,123 @@ bool MainWindow::aCinthyaxis(){
             // pushear la fila
             //aquí van cada una de las producciones de manera inversa
             switch (produccion) {
-                case 0:
+                case 0: //Program
                     pila.push(END);
+                    pila.push(ESTATUTOS);
+                    pila.push(DECLARA);
+                    pila.push(BEGIN);
+                    pila.push(IDENTIFICADOR);
+                    pila.push(CLASS);
+                    pila.push(DECLARA_LIB);
+                break;
+                case 1: //Declara_lib
+                    pila.push(DECLARA_LIB);
+                    pila.push(PUNTO_COMA);
+                    pila.push(ID_LIBRERIA);
+                    pila.push(IMPORT);
+                break;
+                case 2: 
+                    //Declara_lib -> vacío 
+                break;
+                case 3: //Declara
+                    pila.push(DECLARA);
+                    pila.push(PUNTO_COMA);
+                    pila.push(TIPO);
+                    pila.push(AS);
+                    pila.push(A);
+                    pila.push(DEF);
+                break;
+                case 4:
+                    //Declara -> vacío
+                break;
+                case 5: //A
+                    pila.push(AP);
+                    pila.push(IDENTIFICADOR);
+                break;
+                case 6: //A'
+                    pila.push(A);
+                    pila.push(COMA);
+                break;
+                case 7: 
+                    //A' -> vacío
+                break;
+                case 8: //Tipo
+                    pila.push(CONST_ENTERA);
+                break;
+                case 9: //Tipo
+                    pila.push(CONST_REAL);
+                break;
+                case 10: //Tipo
+                    pila.push(CONST_CARACTER);
+                break;
+                case 11: //Tipo
+                    pila.push(CONST_STRING);
+                break;
+                case 12: //Tipo
+                    pila.push(BOOLEANO);
+                break;
+                case 13: //Estatutos
+                    pila.push(ESTATUTOS);
+                    pila.push(PUNTO_COMA);
+                    pila.push(B);
+                break;
+                case 14: 
+                    //Estatutos -> vacío
+                break;
+                case 15: //B
+                    pila.push(EST_ASIG);
+                break;
+                case 16: //B
+                    pila.push(EST_IF);
+                break;
+                case 17: //B
+                    pila.push(EST_WHILE);
+                break;
+                case 18: //B
+                    pila.push(EST_FOR);
+                break;
+                case 19: //B
+                    pila.push(EST_READ);
+                break;
+                case 20: //B
+                    pila.push(EST_WRITE);
+                break;
+                case 21: //B
+                    pila.push(EST_ENTER);
+                break;
+                case 22: //Est_Asig
+                    pila.push(EXPR);
+                    pila.push(IGUAL);
+                    pila.push(IDENTIFICADOR);
+                break;
+                case 23: // Expr
+                    pila.push(EXPRP);
+                    pila.push(EXPR2);
+                break;
+                case 24: //Expr'
+                    pila.push(EXPR);
+                    pila.push(OR);
+                break;
+                case 25: 
+                    //Expr' -> vacío
+                break;
+                case 26: //Expr2
+                    pila.push(EXPR2P);
+                    pila.push(EXPR3);
+                break;
+                case 27: //Expr2'
+                    pila.push(EXPR2);
+                    pila.push(AND);
+                break;
+                case 28: 
+                    //Expr2' -> vacío
+                break;
+                case 29: //Expr3
+                    pila.push(EXPR4);
+                    pila.push(NOT);
+                break;
+                case 30: //Expr3
+                    pila.push(EXPR4);
                 break;
 
             }
@@ -573,8 +723,6 @@ bool MainWindow::aCinthyaxis(){
 void MainWindow::identificaReservada() {
         if(cadena == "class"){
             estado = CLASS;
-        }else if (cadena == "id") {
-            estado = ID;
     } else if(cadena == "begin"){
         estado = BEGIN;
     } else if (cadena == "end"){
@@ -601,6 +749,8 @@ void MainWindow::identificaReservada() {
         estado = ELSE;
     }else if (cadena == "endif"){
         estado = ENDIF;
+    }else if (cadena == "lye"){
+        estado = LYE;
     }
 }
 
@@ -617,74 +767,74 @@ int afinaToken(int estado){ //columna
 QString MainWindow::errorSint(int er){
     switch (er) {
         case 600:
-        return acumulador + "" +  "Error 600: 404 not found ";
+        return lexema + "" +  "Error 600: 404 not found ";
         case 601:
-        return acumulador + "" +  "Error 601: 404 not found ";
+        return lexema + "" +  "Error 601: 404 not found ";
         case 602:
-        return acumulador + "" +  "Error 602: 404 not found ";
+        return lexema + "" +  "Error 602: 404 not found ";
         case 603:
-        return acumulador + "" +  "Error 603: 404 not found ";
+        return lexema + "" +  "Error 603: 404 not found ";
         case 604:
-        return acumulador + "" +  "Error 604: 404 not found ";
+        return lexema + "" +  "Error 604: 404 not found ";
         case 605:
-        return acumulador + "" +  "Error 605: 404 not found ";
+        return lexema + "" +  "Error 605: 404 not found ";
         case 606:
-        return acumulador + "" +  "Error 606: 404 not found ";
+        return lexema + "" +  "Error 606: 404 not found ";
         case 607:
-        return acumulador + "" +  "Error 607: 404 not found ";
+        return lexema + "" +  "Error 607: 404 not found ";
         case 608:
-        return acumulador + "" +  "Error 608: 404 not found ";
+        return lexema + "" +  "Error 608: 404 not found ";
         case 609:
-        return acumulador + "" +  "Error 609: 404 not found ";
+        return lexema + "" +  "Error 609: 404 not found ";
         case 610:
-        return acumulador + "" +  "Error 610: 404 not found ";
+        return lexema + "" +  "Error 610: 404 not found ";
         case 611:
-        return acumulador + "" +  "Error 611: 404 not found ";
+        return lexema + "" +  "Error 611: 404 not found ";
         case 612:
-        return acumulador + "" +  "Error 612: 404 not found ";
+        return lexema + "" +  "Error 612: 404 not found ";
         case 613:
-        return acumulador + "" +  "Error 613: 404 not found ";
+        return lexema + "" +  "Error 613: 404 not found ";
         case 614:
-        return acumulador + "" +  "Error 614: 404 not found ";
+        return lexema + "" +  "Error 614: 404 not found ";
         case 615:
-        return acumulador + "" +  "Error 615: 404 not found ";
+        return lexema + "" +  "Error 615: 404 not found ";
         case 616:
-        return acumulador + "" +  "Error 616: 404 not found ";
+        return lexema + "" +  "Error 616: 404 not found ";
         case 617:
-        return acumulador + "" +  "Error 617: 404 not found ";
+        return lexema + "" +  "Error 617: 404 not found ";
         case 618:
-        return acumulador + "" +  "Error 618: 404 not found ";
+        return lexema + "" +  "Error 618: 404 not found ";
         case 619:
-        return acumulador + "" +  "Error 619: 404 not found ";
+        return lexema + "" +  "Error 619: 404 not found ";
         case 620:
-        return acumulador + "" +  "Error 620: 404 not found ";
+        return lexema + "" +  "Error 620: 404 not found ";
         case 621:
-        return acumulador + "" +  "Error 621: 404 not found ";
+        return lexema + "" +  "Error 621: 404 not found ";
         case 622:
-        return acumulador + "" +  "Error 622: 404 not found ";
+        return lexema + "" +  "Error 622: 404 not found ";
         case 623:
-        return acumulador + "" +  "Error 623: 404 not found ";
+        return lexema + "" +  "Error 623: 404 not found ";
         case 624:
-        return acumulador + "" +  "Error 624: 404 not found ";
+        return lexema + "" +  "Error 624: 404 not found ";
         case 625:
-        return acumulador + "" +  "Error 625: 404 not found ";
+        return lexema + "" +  "Error 625: 404 not found ";
         case 626:
-        return acumulador + "" +  "Error 626: 404 not found ";
+        return lexema + "" +  "Error 626: 404 not found ";
         case 627:
-        return acumulador + "" +  "Error 627: 404 not found ";
+        return lexema + "" +  "Error 627: 404 not found ";
         case 628:
-        return acumulador + "" +  "Error 628: 404 not found ";
+        return lexema + "" +  "Error 628: 404 not found ";
         case 629:
-        return acumulador + "" +  "Error 629: 404 not found ";
+        return lexema + "" +  "Error 629: 404 not found ";
         case 630:
-        return acumulador + "" +  "Error 630: 404 not found ";
+        return lexema + "" +  "Error 630: 404 not found ";
         case 631:
-        return acumulador + "" +  "Error 631: 404 not found ";
+        return lexema + "" +  "Error 631: 404 not found ";
         case 632:
-        return acumulador + "" +  "Error 632: 404 not found ";
+        return lexema + "" +  "Error 632: 404 not found ";
         case 669:
-        return acumulador + "" +  "Error 669: No coincidieron ";
-        default: return acumulador;
+        return lexema + "" +  "Error 669: No coincidieron ";
+        default: return lexema;
     }
 }
 
