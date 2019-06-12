@@ -37,6 +37,7 @@ public:
     QString errorSint(int);
     QString filename;
     QString cadena;
+    QString gramema(int);
 
 private slots:
     void on_actionAbrir_archivo_triggered();
