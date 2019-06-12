@@ -49,7 +49,7 @@
     #define INTEGER 206
     #define FLOTANTE 207
     #define CARACTER 208
-    #define STRING 219
+    #define STRING 209
     #define BOOLEANO 210
     #define IF 211
     #define ELSE 212
@@ -62,7 +62,6 @@
     #define WRITE 219
     #define READ 220
     #define LYE 221
-    //Aquí faltan las palabras reservadas de librería
     #define ENOF 550
     
         //tokens 
@@ -908,6 +907,20 @@ void MainWindow::identificaReservada() {
         estado = ENDIF;
     }else if (cadena == "lye"){
         estado = LYE;
+    }else if (cadena == "while"){
+        estado = WHILE;
+    }else if (cadena == "endwhile"){
+        estado = ENDWHILE;
+    }else if (cadena == "for"){
+        estado = FOR;
+    }else if (cadena == "endfor"){
+        estado = ENDFOR;
+    }else if (cadena == "enter"){
+        estado = ENTER;
+    }else if (cadena == "write"){
+        estado = WRITE;
+    }else if (cadena == "read"){
+        estado = READ;
     }
 }
 
@@ -916,7 +929,48 @@ int afinaToken(int estado){ //columna
     switch(estado){
         case CLASS:
             return 0;
-            //sigue con los demás
+        case BEGIN:
+            return 2;
+        case END:
+            return 3;
+        case IMPORT:
+            return 4;
+        case LYE:
+            return 5;
+        case DEF:
+            return 8;
+        case AS:
+            return 9;
+        case INTEGER:
+            return 11;
+        case FLOTANTE:
+            return 12;
+        case CARACTER:
+            return 13;
+        case STRING:
+            return 14;
+        case BOOLEANO:
+            return 15;
+        case IF:
+            return 38;
+        case ELSE:
+            return 39;
+        case ENDIF:
+            return 40;
+        case WHILE:
+            return 41;
+        case ENDWHILE:
+            return 42;
+        case FOR:
+            return 43;
+        case ENDFOR:
+            return 44;
+        case ENTER:
+            return 45;
+        case WRITE:
+            return 46;
+        case READ:
+            return 47;
     default: return estado;
     }
 }
