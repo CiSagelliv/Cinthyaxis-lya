@@ -778,6 +778,40 @@ bool MainWindow::aCinthyaxis(){
                     pila.push(EXPR);
                     pila.push(PARENTESIS_ABRE);
                 break;
+                case 50: //oprel
+                    pila.push(IGUAL);
+                break;
+                case 51: //oprel
+                    pila.push(DIFERENTE);
+                break;
+                case 52: //oprel
+                    pila.push(MENOR);
+                break;
+                case 53: //oprel
+                    pila.push(MENOR_IGUAL);
+                break;
+                case 54: //oprel
+                    pila.push(MAYOR);
+                break;
+                case 55: //oprel
+                    pila.push(MAYOR_IGUAL);
+                break;
+                case 56: //Est_if
+                    pila.push(EST_IFP);
+                    pila.push(ESTATUTOS);
+                    pila.push(PARENTESIS_CIERRA);
+                    pila.push(EXPR);
+                    pila.push(PARENTESIS_ABRE);
+                    pila.push(IF);
+                break;
+                case 57: //Est_if'
+                    pila.push(ENDIF);
+                    pila.push(ESTATUTOS);
+                    pila.push(ELSE);
+                break;
+                case 58: //Est_if'
+                    pila.push(ENDIF);
+                break;
 
             }
         }
