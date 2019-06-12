@@ -571,7 +571,7 @@ bool MainWindow::aCinthyaxis(){
     while(true){
         for (int i: pila){
           //std::cout << significado(i) + " ";
-          ui->AreaPila->appendPlainText(gramema(i));
+            ui->AreaEjecucion->setPlainText(gramema(i));
        }
        std::cout << std::endl;
     if (simbolo == estado){
@@ -584,7 +584,7 @@ bool MainWindow::aCinthyaxis(){
         columna = afinaToken(estado);
         produccion = matrizSint[simbolo][columna];
         if (produccion > 600){
-            errorSint(produccion);
+            ui->AreaErroresPila->setPlainText(errorSint(produccion));
             return false;
         } else {
             //si jala
