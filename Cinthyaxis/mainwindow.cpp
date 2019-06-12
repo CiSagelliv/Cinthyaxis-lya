@@ -834,8 +834,40 @@ bool MainWindow::aCinthyaxis(){
                     pila.push(ENTER);
                 break;
                 case 62: //Est_write
+                    pila.push(PARENTESIS_CIERRA);
+                    pila.push(D);
+                    pila.push(PARENTESIS_ABRE);
                     pila.push(WRITE);
                 break;
+                case 63: //D
+                    pila.push(DP);
+                    pila.push(EXPR);
+                break;
+                case 64: //D'
+                    pila.push(D);
+                    pila.push(COMA);
+                break;
+                case 65: 
+                    //D' -> vacío
+                break;
+                case 66: //Est_read
+                    pila.push(PARENTESIS_CIERRA);
+                    pila.push(E);
+                    pila.push(PARENTESIS_ABRE);
+                    pila.push(READ);
+                break;
+                case 67: //E
+                    pila.push(EP);
+                    pila.push(IDENTIFICADOR);
+                break;
+                case 68: //E'
+                    pila.push(E);
+                    pila.push(COMA);
+                break;
+                case 69: 
+                    //E' -> vacío
+                break;
+                default: return produccion;
             }
         }
     }
