@@ -812,7 +812,30 @@ bool MainWindow::aCinthyaxis(){
                 case 58: //Est_if'
                     pila.push(ENDIF);
                 break;
-
+                case 59: //Est_whie
+                    pila.push(ENDWHILE);
+                    pila.push(ESTATUTOS);
+                    pila.push(PARENTESIS_CIERRA);
+                    pila.push(EXPR);
+                    pila.push(PARENTESIS_ABRE);
+                    pila.push(WHILE);
+                break;
+                case 60: //Est_for
+                    pila.push(ENDFOR);
+                    pila.push(ESTATUTOS);
+                    pila.push(PARENTESIS_CIERRA);
+                    pila.push(EXPR);
+                    pila.push(DOS_PUNTOS);
+                    pila.push(EST_ASIG);
+                    pila.push(PARENTESIS_ABRE);
+                    pila.push(FOR);
+                break;
+                case 61: //Est_enter
+                    pila.push(ENTER);
+                break;
+                case 62: //Est_write
+                    pila.push(WRITE);
+                break;
             }
         }
     }
