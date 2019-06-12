@@ -319,7 +319,6 @@ if (c >= '0' && c<= '9'){
 }
 
 QString MainWindow::tokens(int t){
-    return lexema + gramema(g);
     switch(t){
         case RESERVADA:
         return lexema + ":Palabra reservada";
@@ -812,7 +811,7 @@ bool MainWindow::aCinthyaxis(){
                 case 58: //Est_if'
                     pila.push(ENDIF);
                 break;
-                case 59: //Est_whie
+                case 59: //Est_while
                     pila.push(ENDWHILE);
                     pila.push(ESTATUTOS);
                     pila.push(PARENTESIS_CIERRA);
@@ -975,6 +974,80 @@ int afinaToken(int estado){ //columna
     default: return estado;
     }
 }
+
+QString MainWindow::gramema (int gram){
+    switch(gram){
+        case PROGRAM:
+            return "Producción: Program";
+        case DECLARA_LIB:
+            return "Producción: Declara_lib";
+        case DECLARA:
+            return "Producción: Declara";
+        case A:
+            return "Producción: Program";
+        case AP:
+            return "Producción: A";
+        case TIPO:
+            return "Producción: Tipo";
+        case ESTATUTOS:
+            return "Producción: Estatutos";
+        case B:
+            return "Producción: B";
+        case EST_ASIG:
+            return "Producción: Est_Asig";
+        case EXPR:
+            return "Producción: Expr";
+        case EXPRP:
+            return "Producción: Expr'";
+        case EXPR2:
+            return "Producción: Expr2";
+        case EXPR2P:
+            return "Producción: Expr2'";
+        case EXPR3:
+            return "Producción: Expr3";
+        case EXPR4:
+            return "Producción: Expr4";
+        case EXPR4P:
+            return "Producción: Expr4'";
+        case EXPR5:
+            return "Producción: Expr5";
+        case EXPR5P:
+            return "Producción: Expr5'";
+        case TERM:
+            return "Producción: Term";
+        case TERMP:
+            return "Producción: Term'";
+        case FACT:
+            return "Producción: Fact";
+        case OPREL:
+            return "Producción: Oprel";
+        case EST_IF:
+            return "Producción: Est_if";
+        case EST_IFP:
+            return "Producción: Est_if'";
+        case EST_WHILE:
+            return "Producción: Est_while";
+        case EST_FOR:
+            return "Producción: Est_for";
+        case EST_ENTER:
+            return "Producción: Est_enter";
+        case EST_WRITE:
+            return "Producción: Est_write";
+        case D:
+            return "Producción: D";
+        case DP:
+            return "Producción: D'";
+        case EST_READ:
+            return "Producción: Est_read";
+        case E:
+            return "Producción: E";
+        case EP:
+            return "Producción: E'";
+
+
+        default: return "Error";
+    }
+};
 
 QString MainWindow::errorSint(int er){
     switch (er) {
