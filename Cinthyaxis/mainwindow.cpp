@@ -633,16 +633,16 @@ bool MainWindow::aCinthyaxis(){
                     //A' -> vacío
                 break;
                 case 8: //Tipo
-                    pila.push(CONST_ENTERA);
+                    pila.push(INTEGER);
                 break;
                 case 9: //Tipo
-                    pila.push(CONST_REAL);
+                    pila.push(FLOTANTE);
                 break;
                 case 10: //Tipo
-                    pila.push(CONST_CARACTER);
+                    pila.push(CARACTER);
                 break;
                 case 11: //Tipo
-                    pila.push(CONST_STRING);
+                    pila.push(STRING);
                 break;
                 case 12: //Tipo
                     pila.push(BOOLEANO);
@@ -709,6 +709,74 @@ bool MainWindow::aCinthyaxis(){
                 break;
                 case 30: //Expr3
                     pila.push(EXPR4);
+                break;
+                case 31: //Expr4
+                    pila.push(EXPR4P);
+                    pila.push(EXPR5);
+                break;
+                case 32: //Expr4'
+                    pila.push(EXPR5);
+                    pila.push(OPREL);
+                break;
+                case 33: 
+                    //Expr4' -> vacío
+                break;
+                case 34: //Expr5
+                    pila.push(EXPR5P);
+                    pila.push(TERM);
+                break;
+                case 35: //Expr5'
+                    pila.push(EXPR5);
+                    pila.push(SUMA);
+                break;
+                case 36: //Expr5'
+                    pila.push(EXPR5);
+                    pila.push(RESTA);
+                break;
+                case 37: 
+                    // Expr5' -> vacío
+                break;
+                case 38: //Term 
+                    pila.push(TERMP);
+                    pila.push(FACT);
+                break;
+                case 39: //Term'
+                    pila.push(TERM);
+                    pila.push(MULTIPLICACION);
+                break;
+                case 40: //Term'
+                    pila.push(TERM);
+                    pila.push(DIVISION);
+                break;
+                case 41: //Term'
+                    pila.push(TERM);
+                    pila.push(DIVISION);
+                break;
+                case 42: 
+                    // Term' -> vacío
+                break;
+                case 43: //Fact
+                    pila.push(IDENTIFICADOR);
+                break;
+                case 44: //Fact
+                    pila.push(CONST_ENTERA);
+                break;
+                case 45: //Fact
+                    pila.push(CONST_REAL);
+                break;
+                case 46: //Fact
+                    pila.push(CONST_NOTACION);
+                break;
+                case 47: //Fact
+                    pila.push(CONST_CARACTER);
+                break;
+                case 48: //Fact
+                    pila.push(CONST_STRING);
+                break;
+                case 49: //Fact
+                    pila.push(PARENTESIS_CIERRA);
+                    pila.push(EXPR);
+                    pila.push(PARENTESIS_ABRE);
                 break;
 
             }
