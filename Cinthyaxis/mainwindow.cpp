@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QTextStream>
-#include <QFileDialog>
-#include <QMessageBox>
+#include <iostream>
 
 #ifndef SIMBOLOS
 #define SIMBOLOS
@@ -149,12 +147,13 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::analiza(){
-    pila.push(ENOF);
+    //pila.push(ENOF);
     pila.push(PROGRAM);
     for(int i=0;i<cadena.length();i++){
             aCaracter = cadena[i].toLatin1();
             columna = relacionaCaracteres(aCaracter);
             estado = matriz[estado][columna];
+            //std::cout << std::to_string(estado) << std::endl;
         if (estado >= 100 && estado <= 199){
             if (seAgrega()){
                 acumulador += QString(aCaracter);
@@ -162,6 +161,7 @@ void MainWindow::analiza(){
                 i--;
             }
             verificarReservada(acumulador);
+            std::cout << acumulador.toStdString() << std::endl;
             if (!aCinthyaxis()) return;
             ui->AreaTokens->appendPlainText(tokens(estado));
             estado=0;
@@ -180,6 +180,11 @@ void MainWindow::analiza(){
         } else if (estado > 0 && estado < 100) {
             acumulador += QString(aCaracter);
         }
+    }
+    if (pila.empty()){
+        std::cout << "Sí jalo" << std::endl;
+    }else {
+        std::cout << "Algo falto" << std::endl;
     }
 }
 
@@ -225,7 +230,7 @@ if (c >= '0' && c<= '9'){
     case 'i': return 1;
     case 'j': return 1;
     case 'k': return 1;
-    case 'l': return 1;
+    case 'l': return 7;
     case 'm': return 1;
     case 'n': return 1;
     case 'o': return 1;
@@ -238,48 +243,49 @@ if (c >= '0' && c<= '9'){
     case 'v': return 1;
     case 'w': return 1;
     case 'x': return 1;
-    case 'y': return 1;
+    case 'y': return 8;
     case 'z': return 1;
 //Signos de puntuación
     case '.': return 4;
-    case ';': return 23;
-    case ':': return 22;
+    case ';': return 25;
+    case ':': return 24;
 //Signos de agrupación
-    case '(': return 24;
-    case')': return 25;
-    case '[': return 26;
-    case']': return 27;
+    case '(': return 26;
+    case')': return 27;
+    case '[': return 28;
+    case']': return 29;
 //Operadores
-    case '+': return 7;
-    case'-': return 8;
-    case '*': return 14;
+    case '+': return 9;
+    case'-': return 10;
+    case '*': return 16;
     case'/': return 15;
-    case '%': return 28;
+    case '%': return 30;
 //Operadores relacionales
-    case'<': return 20;
-    case '>': return 21;
-    case'=': return 19;
+    case'<': return 22;
+    case '>': return 23;
+    case'=': return 21;
 //Operadores lógicos
-    case'&': return 16;
-    case '|': return 17;
-    case'!': return 18;
+    case'&': return 18;
+    case '|': return 19;
+    case'!': return 20;
 //guión bajo, comillas simples y dobles
     case'_': return 3;
-    case '\'': return 12;
-    case'\"': return 13;
+    case '\'': return 17;
+    case'\"': return 15;
 //Notación científica
     case 'E': return 5;
     case 'e': return 6;
 //tabulador, espacio en blanco y salto de línea
-    case'\n': return 10;
-    case'\t': return 11;
-    case' ': return 9;
+    case'\n': return 12;
+    case'\t': return 13;
+    case' ': return 11;
   }
-  return 29;
+  return 31;
 
 }
 
 QString MainWindow::tokens(int t){
+    return acumulador + significado(t);
     switch(t){
         case 100:
         return acumulador + ":Palabra reservada";
@@ -341,31 +347,37 @@ QString MainWindow::tokens(int t){
         return acumulador + ":Llave que abre";
         case 129:
         return acumulador + ":Llave que cierra";
+        case 130:
+        return acumulador + ":Identificador de librería";
+        default: return "Error";
     }
 }
 
 QString MainWindow::errores(int e){
     switch(e){
         case 500:
-        return acumulador + "" +  "Error 500: no es una constante numérica";
+        return acumulador + " Error 500: no es una constante numérica";
         case 501:
-        return acumulador + "" +  "Error 501: esperaba caracter después de _ ";
+        return acumulador + " Error 501: esperaba caracter después de _ ";
         case 502:
-        return acumulador + "" +  "Error 502: esperaba digito después de .";
+        return acumulador + " Error 502: esperaba digito después de .";
         case 503:
-        return acumulador + "" +  "Error 503: esperaba digito +, - ";
+        return acumulador + " Error 503: esperaba digito +, - ";
         case 504:
-        return acumulador + "" +  "Error 504: esperaba digito después de signo +,- ";
+        return acumulador + " Error 504: esperaba digito después de signo +,- ";
         case 505:
-        return acumulador + "" +  "Error 505: esperaba digito diferente a comilla simple ";
+        return acumulador + " Error 505: esperaba digito diferente a comilla simple ";
         case 506:
-        return acumulador + "" +  "Error 506: esperaba comilla después de caracter ";
+        return acumulador + " Error 506: esperaba comilla después de caracter ";
         case 507:
-        return acumulador + "" +  "Error 507: esperaba signo de & después de & ";
+        return acumulador + " Error 507: esperaba signo de & después de & ";
         case 508:
-        return acumulador + "" +  "Error 508: esperaba signo de | después de | ";
+        return acumulador + " Error 508: esperaba signo de | después de | ";
         case 509:
-        return acumulador + "" +  "Error 509: 404 not found ";
+        return acumulador + " Error 509: 404 not found ";
+        case 510:
+        return acumulador + " Error 510: !.lye";
+        default: return "Error";
     }
 }
 
@@ -461,6 +473,8 @@ bool MainWindow::seAgrega(){
         case 129: 
           return true;
       //"caracter: Llave que cierra";
+        case 130:
+          return true;
   //aquí empiezan los errores 
         case 500:
           return true; 
@@ -492,10 +506,13 @@ bool MainWindow::seAgrega(){
         case 509:
           return true;
       //"Error 509: 404 not found ";
+        case 510:
+          return false;
+        default: return true;
     }
 }
 
-bool MainWindow::verificarReservada(QString ac){
+void MainWindow::verificarReservada(QString ac){
     if (estado == 100){
         if ((ac=="begin")||(ac=="end")||(ac=="def")
             ||(ac=="as")||(ac=="integer")||(ac=="float")
@@ -505,11 +522,10 @@ bool MainWindow::verificarReservada(QString ac){
             ||(ac=="endfor")||(ac=="while")||(ac=="endwhile")
             ||(ac=="function")||(ac=="endfunction")||(ac=="import")
             ||(ac=="null")||(ac=="read")||(ac=="write")
-            ||(ac=="enter")||(ac=="principal")||(ac=="lye")||(ac=="io")
-            ||(ac=="class")){
+            ||(ac=="enter")||(ac=="principal")||(ac=="class")){
                 estado = 100;
             } else {
-                estado= 101;
+                estado = 101;
             }
        }
 }
@@ -519,9 +535,14 @@ bool MainWindow::aCinthyaxis(){
     if (estado == RESERVADA) identificaReservada();
 
     while(true){
+        for (int i: pila){
+          std::cout << significado(i) + " ";
+       }
+       std::cout << std::endl;
     if (simbolo == estado){
         return true;
     } else if (simbolo > 100) {
+        std::cout << "No coincidieron" << std::endl;
         errorSint(669);
         return false;
     } else {
@@ -534,24 +555,22 @@ bool MainWindow::aCinthyaxis(){
             //si jala
             // si es un terminal pushear el token y si es un no terminal
             // pushear la fila
-            //aquí van cada una de las producciones
+            //aquí van cada una de las producciones de manera inversa
             switch (produccion) {
                 case 0:
                     pila.push(END);
                 break;
-                case 50:
-                    pila.push(107); //token
-                    pila.push(/*aqui va el número de fila*/); //fila
 
             }
         }
     }
+
   }
 
 }
 
 
-int MainWindow::identificaReservada() {
+void MainWindow::identificaReservada() {
         if(cadena == "class"){
             estado = CLASS;
         }else if (cadena == "id") {
@@ -582,8 +601,6 @@ int MainWindow::identificaReservada() {
         estado = ELSE;
     }else if (cadena == "endif"){
         estado = ENDIF;
-    }else if (cadena == ""){
-
     }
 }
 
@@ -592,8 +609,8 @@ int afinaToken(int estado){ //columna
     switch(estado){
         case CLASS:
             return 0;
-           break;
             //sigue con los demás
+    default: return estado;
     }
 }
 
@@ -667,6 +684,7 @@ QString MainWindow::errorSint(int er){
         return acumulador + "" +  "Error 632: 404 not found ";
         case 669:
         return acumulador + "" +  "Error 669: No coincidieron ";
+        default: return acumulador;
     }
 }
 
@@ -688,4 +706,10 @@ void MainWindow::on_actionAbrir_archivo_triggered()
                                  tr("No se puede leer el archivo"));
       }
     }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    cadena = ui->AreaArchivo->toPlainText() + " ";
+    analiza();
 }

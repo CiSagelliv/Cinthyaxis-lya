@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 #include <QStack>
 #include <QMainWindow>
+#include <QTextStream>
+#include <QFileDialog>
+#include <QMessageBox>
 
 namespace Ui {
 class MainWindow;
@@ -30,13 +33,15 @@ public:
     bool aCinthyaxis();
     QStack<int> pila;
     int produccion;
-    int identificaReservada();
+    void identificaReservada();
     QString errorSint(int);
     QString filename;
     QString cadena;
 
 private slots:
     void on_actionAbrir_archivo_triggered();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
