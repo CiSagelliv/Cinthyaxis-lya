@@ -38,6 +38,9 @@ public:
     QString filename;
     QString cadena;
     QString gramema(int);
+    int afinaToken(int);
+    QString mensaje;
+
 
 private slots:
     void on_actionAbrir_archivo_triggered();

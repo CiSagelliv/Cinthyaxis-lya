@@ -100,7 +100,7 @@
 #endif
 
 static int matriz[25][32]= {
-    {2,   1,   4,   500, 125, 2,   1,   1,   1,   107, 108, 0,   0,   0,   10,  12,  109, 13,  16,  17,  18,  19,  21,  20,  123, 124, 126, 127, 128, 129, 111, 509},
+    {2,   1,   4,   500, 125, 2,   1,   1,   1,   107, 108, 0,   0,   0,   10,  12,  109, 13,  16,  17,  18,  19,  21,  20,  123, 124, 126, 127, 128, 129, 111, 131},   
     {2,   1,   2,   3,   22,  2,   1,   1,   1,   100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100},
     {2,   2,   2,   3,   101, 2,   2,   2,   2,   101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101},
     {2,   2,   2,   501, 501, 2,   2,   2,   2,   501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501},
@@ -110,19 +110,19 @@ static int matriz[25][32]= {
     {503, 503, 9,   503, 503, 503, 503, 503, 503, 8,   8,   503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503, 503},
     {504, 504, 9,   504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504},
     {104, 104, 9,   104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104},
-    {11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  505, 11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11},
+    {11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  505, 11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11,  11, 11},
     {506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 105, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506},
-    {12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  106, 12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12},
+    {12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  106, 12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12,  12, 12},
     {110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 14,  110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110},
-    {14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  15,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14},
-    {14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  15,  112, 14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14},
+    {14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  15,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14, 14},
+    {14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  15,  112, 14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14,  14, 14},
     {507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 113, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507},
     {508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 114, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508, 508},
     {115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 116, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115},
     {122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122, 117, 122, 122, 122, 122, 122, 122, 122, 122, 122, 122},
     {118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118, 119, 118, 118, 118, 118, 118, 118, 118, 118, 118, 118},
     {120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 121, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120},
-    {510, 510, 510, 510, 510, 510, 510, 23,  510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510},
+    {510, 131, 510, 510, 510, 510, 510, 23,  510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510},
     {510, 510, 510, 510, 510, 510, 510, 510, 24,  510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510},
     {510, 510, 510, 510, 510, 510, 130, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510, 510}
     };
@@ -130,7 +130,7 @@ static int matriz[25][32]= {
 static int matrizSint[33][48] = {
     {1,   600, 600, 600, 1,   600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600},
     {3,   601, 601, 601, 2,   601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601},
-    {602, 5,   602, 5,   602, 602, 602, 602, 4,   602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 5,   5,   5,   5,   5,   5,   5,   5,   5,   5},
+    {602, 4,   602, 5,   602, 602, 602, 602, 4,   602, 4,   602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 602, 5,   5,   5,   5,   5,   5,   5,   5,   5,   5},
     {603, 6,   603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603, 603},
     {604, 604, 604, 604, 604, 604, 604, 604, 604, 8,   7,   604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604, 604},
     {605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 9,   10,  11,  12,  13,  605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605, 605},
@@ -138,16 +138,16 @@ static int matrizSint[33][48] = {
     {607, 16,  607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 607, 17,  607, 607, 18,  607, 19,  607, 22,  21,  20},
     {608, 23,  608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608, 608},
     {609, 24,  609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 24,  24,  24,  24,  24,  24,  609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609, 609},
-    {610, 610, 610, 610, 610, 610, 26,  26,  610, 610, 610, 610, 610, 610, 610, 610, 610, 25,  610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 26,  610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610},
+    {610, 610, 610, 610, 610, 610, 26,  26,  610, 610, 26, 610, 610, 610, 610, 610, 610, 25,  610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 26,  610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610, 610},
     {611, 27,  611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 27,  27,  27,  27,  27,  27,  611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611, 611},
-    {612, 612, 612, 612, 612, 612, 29,  29,  612, 612, 612, 612, 612, 612, 612, 612, 612, 29,  28,  612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 29,  612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612},
+    {612, 612, 612, 612, 612, 612, 29,  29,  612, 612, 29, 612, 612, 612, 612, 612, 612, 29,  28,  612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 29,  612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612},
     {613, 31,  613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 30,  613, 613, 613, 613, 613, 31,  31,  31,  31,  31,  31,  613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613, 613},
     {614, 32,  614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 32,  32,  32,  32,  32,  32,  614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614, 614},
-    {615, 615, 615, 615, 615, 615, 34,  34,  615, 615, 615, 615, 615, 615, 615, 615, 615, 34,  34,  615, 615, 615, 615, 615, 615, 615, 615, 615, 615, 615, 615, 34,  33,  33,  33,  33,  33,  33,  615, 615, 615, 615, 615, 615, 615, 615, 615, 615},
+    {615, 615, 615, 615, 615, 615, 34,  34,  615, 615, 34, 615, 615, 615, 615, 615, 615, 34,  34,  615, 615, 615, 615, 615, 615, 615, 615, 615, 615, 615, 615, 34,  33,  33,  33,  33,  33,  33,  615, 615, 615, 615, 615, 615, 615, 615, 615, 615},
     {616, 35,  616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 35,  35,  35,  35,  35,  35,  616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616, 616},
-    {617, 617, 617, 617, 617, 617, 38,  38,  617, 617, 617, 617, 617, 617, 617, 617, 617, 38,  38,  617, 36,  37,  617, 617, 617, 617, 617, 617, 617, 617, 617, 38,  38,  38,  38,  38,  38,  38,  617, 617, 617, 617, 617, 617, 617, 617, 617, 617},
+    {617, 617, 617, 617, 617, 617, 38,  38,  617, 617, 38, 617, 617, 617, 617, 617, 617, 38,  38,  617, 36,  37,  617, 617, 617, 617, 617, 617, 617, 617, 617, 38,  38,  38,  38,  38,  38,  38,  617, 617, 617, 617, 617, 617, 617, 617, 617, 617},
     {618, 39,  618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 39,  39,  39,  39,  39,  39,  618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618, 618},
-    {619, 619, 619, 619, 619, 619, 43,  43,  619, 619, 619, 619, 619, 619, 619, 619, 619, 43,  43,  619, 43,  43,  40,  41,  42,  619, 619, 619, 619, 619, 619, 43,  43,  43,  43,  43,  43,  43,  619, 619, 619, 619, 619, 619, 619, 619, 619, 619},
+    {619, 619, 619, 619, 619, 619, 43,  43,  619, 619, 43, 619, 619, 619, 619, 619, 619, 43,  43,  619, 43,  43,  40,  41,  42,  619, 619, 619, 619, 619, 619, 43,  43,  43,  43,  43,  43,  43,  619, 619, 619, 619, 619, 619, 619, 619, 619, 619},
     {620, 44,  620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 45,  46,  47,  48,  49,  50,  620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620, 620},
     {621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 621, 51,  52,  53,  54,  55,  56,  621, 621, 621, 621, 621, 621, 621, 621, 621, 621},
     {622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 622, 57,  622, 622, 622, 622, 622, 622, 622, 622, 622},
@@ -181,13 +181,13 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::analiza(){
-    //pila.push(ENOF);
+    pila.push(ENOF);
     pila.push(PROGRAM);
     for(int i=0;i<cadena.length();i++){
             aCaracter = cadena[i].toLatin1();
             columna = relacionaCaracteres(aCaracter);
             estado = matriz[estado][columna];
-            //std::cout << std::to_string(estado) << std::endl;
+            std::cout << std::to_string(estado) << std::endl;
         if (estado >= 100 && estado <= 199){
             if (seAgrega()){
                 lexema += QString(aCaracter);
@@ -196,8 +196,10 @@ void MainWindow::analiza(){
             }
             verificarReservada(lexema);
             std::cout << lexema.toStdString() << std::endl;
-            if (!aCinthyaxis()) return;
             ui->AreaTokens->appendPlainText(tokens(estado));
+            bool valido = aCinthyaxis();
+            std::cout << "Fue valido?: " + std::to_string(valido) << std::endl;
+            if (!valido) return;
             estado=0;
             lexema = "";
 
@@ -215,9 +217,15 @@ void MainWindow::analiza(){
             lexema += QString(aCaracter);
         }
     }
-    if (pila.empty()){
-        std::cout << "Sí jalo" << std::endl;
+    if (pila.first() == ENOF){
+        QMessageBox jalo;
+        jalo.setText("Se llego al final de la pila, end of file encontrado");
+        jalo.exec();
+        std::cout << "Si jalo" << std::endl;
     }else {
+        QMessageBox Nojalo;
+        Nojalo.setText("No se llego al final de la pila, end of file no encontrado");
+        Nojalo.exec();
         std::cout << "Algo falto" << std::endl;
     }
 }
@@ -281,6 +289,7 @@ if (c >= '0' && c<= '9'){
     case 'z': return 1;
 //Signos de puntuación
     case '.': return 4;
+    case ',': return 31; //Aquí agregué la coma 
     case ';': return 25;
     case ':': return 24;
 //Signos de agrupación
@@ -314,7 +323,7 @@ if (c >= '0' && c<= '9'){
     case'\t': return 13;
     case' ': return 11;
   }
-  return 31;
+  return 32;
 
 }
 
@@ -372,6 +381,8 @@ QString MainWindow::tokens(int t){
         return lexema + ":Punto y coma";
         case PUNTO:
         return lexema + ":Punto";
+        case COMA:
+        return lexema + ":Coma";
         case PARENTESIS_ABRE:
         return lexema + ":Paréntesis que abre";
         case PARENTESIS_CIERRA:
@@ -406,8 +417,6 @@ QString MainWindow::errores(int e){
         return lexema + " Error 507: esperaba signo de & después de & ";
         case 508:
         return lexema + " Error 508: esperaba signo de | después de | ";
-        case 509:
-        return lexema + " Error 509: 404 not found ";
         case 510:
         return lexema + " Error 510: !.lye";
         default: return "Error";
@@ -508,6 +517,8 @@ bool MainWindow::seAgrega(){
       //"caracter: Llave que cierra";
         case 130:
           return true;
+        case 131:
+            return true;
   //aquí empiezan los errores 
         case 500:
           return true; 
@@ -536,9 +547,6 @@ bool MainWindow::seAgrega(){
         case 508:
           return false;  
       //"Error 508: esperaba signo de | después de | ";
-        case 509:
-          return true;
-      //"Error 509: 404 not found ";
         case 510:
           return false;
         default: return true;
@@ -564,34 +572,57 @@ void MainWindow::verificarReservada(QString ac){
 }
 
 bool MainWindow::aCinthyaxis(){
-    int simbolo = pila.pop();
-    if (estado == RESERVADA) identificaReservada();
-
     while(true){
-        for (int i: pila){
-          //std::cout << significado(i) + " ";
-            ui->AreaEjecucion->setPlainText(gramema(i));
+        int simbolo = pila.pop();
+        std::cout << std::to_string(simbolo) + "  Imprimo simbolo de pila (linea 571)" << std::endl;
+        mensaje = " | ";
+        for (int i=0; i<=pila.size()-1;i++){
+          //std::cout << gramema(i).toStdString() + "  Imprimo gramema desde aCinthyaxis" << std::endl;
+            mensaje+= QVariant(gramema(pila.at(i))).toString() + " | ";
        }
-       std::cout << std::endl;
-    if (simbolo == estado){
+        ui->AreaEjecucion->appendPlainText(mensaje);
+
+        if (estado == RESERVADA) identificaReservada();
+            std::cout << std::to_string(RESERVADA) + "  Imprimo estado recibido (linea 577) " << std::endl;
+            std::cout << std::to_string(estado) + "  Imprimo estado (linea 578)" << std::endl;
+
+
+        if (simbolo == estado){
+        std::cout << std::to_string(simbolo) + "  Imprimo simbolo de pila sacado (linea 580)" << std::endl;
+        std::cout << std::to_string(estado) + "  Imprimo estado recibido (linea 581)" << std::endl;
+        std::cout << "Son iguales simbolo de pila y estado (linea 582)" << std::endl;
+        /*mensaje = "| ";
+        for (int i=0;i<=pila.size()-1;i++) {
+            mensaje+= QVariant(gramema(pila.at(i))).toString() + " | ";
+        }
+        std::cout << mensaje.toStdString() << std::endl;*/
         return true;
-    } else if (simbolo > 100) {
-        std::cout << "No coincidieron" << std::endl;
-        errorSint(669);
+
+
+        } else if (simbolo > 100) {
+        std::cout << "No coincidio el estado con el simbolo (linea 585)" << std::endl;
+        ui->AreaErroresPila->setPlainText(errorSint(669));
         return false;
-    } else {
+
+
+        } else {
+        //simbolo = pila.pop();
         columna = afinaToken(estado);
+        std::cout << std::to_string(columna) + "  Muestro la columna de la matriz (linea 590) " << std::endl;
         produccion = matrizSint[simbolo][columna];
+        std::cout <<  "Produccion recibida: (linea 592)  " + std::to_string(produccion) << std::endl;
+        std::cout << std::to_string(simbolo) + "  Imprimo simbolo de matriz (linea 593)" << std::endl;
+        std::cout << std::to_string(columna) + "  Imprimo columna de matrz (linea 594)" << std::endl;
+        }
+
+
         if (produccion > 600){
             ui->AreaErroresPila->setPlainText(errorSint(produccion));
             return false;
         } else {
-            //si jala
-            // si es un terminal pushear el token y si es un no terminal
-            // pushear la fila
-            //aquí van cada una de las producciones de manera inversa
+            std::cout <<  "Produccion encontrada: (linea 599)" + std::to_string(produccion) << std::endl;
             switch (produccion) {
-                case 0: //Program
+                case 1: //Program
                     pila.push(END);
                     pila.push(ESTATUTOS);
                     pila.push(DECLARA);
@@ -600,16 +631,16 @@ bool MainWindow::aCinthyaxis(){
                     pila.push(CLASS);
                     pila.push(DECLARA_LIB);
                 break;
-                case 1: //Declara_lib
+                case 2: //Declara_lib
                     pila.push(DECLARA_LIB);
                     pila.push(PUNTO_COMA);
                     pila.push(ID_LIBRERIA);
                     pila.push(IMPORT);
                 break;
-                case 2: 
+                case 3:
                     //Declara_lib -> vacío 
                 break;
-                case 3: //Declara
+                case 4: //Declara
                     pila.push(DECLARA);
                     pila.push(PUNTO_COMA);
                     pila.push(TIPO);
@@ -617,185 +648,185 @@ bool MainWindow::aCinthyaxis(){
                     pila.push(A);
                     pila.push(DEF);
                 break;
-                case 4:
+                case 5:
                     //Declara -> vacío
                 break;
-                case 5: //A
+                case 6: //A
                     pila.push(AP);
                     pila.push(IDENTIFICADOR);
                 break;
-                case 6: //A'
+                case 7: //A'
                     pila.push(A);
                     pila.push(COMA);
                 break;
-                case 7: 
+                case 8:
                     //A' -> vacío
                 break;
-                case 8: //Tipo
+                case 9: //Tipo
                     pila.push(INTEGER);
                 break;
-                case 9: //Tipo
+                case 10: //Tipo
                     pila.push(FLOTANTE);
                 break;
-                case 10: //Tipo
+                case 11: //Tipo
                     pila.push(CARACTER);
                 break;
-                case 11: //Tipo
+                case 12: //Tipo
                     pila.push(STRING);
                 break;
-                case 12: //Tipo
+                case 13: //Tipo
                     pila.push(BOOLEANO);
                 break;
-                case 13: //Estatutos
+                case 14: //Estatutos
                     pila.push(ESTATUTOS);
                     pila.push(PUNTO_COMA);
                     pila.push(B);
                 break;
-                case 14: 
+                case 15:
                     //Estatutos -> vacío
                 break;
-                case 15: //B
+                case 16: //B
                     pila.push(EST_ASIG);
                 break;
-                case 16: //B
+                case 17: //B
                     pila.push(EST_IF);
                 break;
-                case 17: //B
+                case 18: //B
                     pila.push(EST_WHILE);
                 break;
-                case 18: //B
+                case 19: //B
                     pila.push(EST_FOR);
                 break;
-                case 19: //B
+                case 20: //B
                     pila.push(EST_READ);
                 break;
-                case 20: //B
+                case 21: //B
                     pila.push(EST_WRITE);
                 break;
-                case 21: //B
+                case 22: //B
                     pila.push(EST_ENTER);
                 break;
-                case 22: //Est_Asig
+                case 23: //Est_Asig
                     pila.push(EXPR);
-                    pila.push(IGUAL);
+                    pila.push(ASIGNACION);
                     pila.push(IDENTIFICADOR);
                 break;
-                case 23: // Expr
+                case 24: // Expr
                     pila.push(EXPRP);
                     pila.push(EXPR2);
                 break;
-                case 24: //Expr'
+                case 25: //Expr'
                     pila.push(EXPR);
                     pila.push(OR);
                 break;
-                case 25: 
+                case 26:
                     //Expr' -> vacío
                 break;
-                case 26: //Expr2
+                case 27: //Expr2
                     pila.push(EXPR2P);
                     pila.push(EXPR3);
                 break;
-                case 27: //Expr2'
+                case 28: //Expr2'
                     pila.push(EXPR2);
                     pila.push(AND);
                 break;
-                case 28: 
+                case 29:
                     //Expr2' -> vacío
-                break;
-                case 29: //Expr3
-                    pila.push(EXPR4);
-                    pila.push(NOT);
                 break;
                 case 30: //Expr3
                     pila.push(EXPR4);
+                    pila.push(NOT);
                 break;
-                case 31: //Expr4
+                case 31: //Expr3
+                    pila.push(EXPR4);
+                break;
+                case 32: //Expr4
                     pila.push(EXPR4P);
                     pila.push(EXPR5);
                 break;
-                case 32: //Expr4'
+                case 33: //Expr4'
                     pila.push(EXPR5);
                     pila.push(OPREL);
                 break;
-                case 33: 
+                case 34:
                     //Expr4' -> vacío
                 break;
-                case 34: //Expr5
+                case 35: //Expr5
                     pila.push(EXPR5P);
                     pila.push(TERM);
                 break;
-                case 35: //Expr5'
+                case 36: //Expr5'
                     pila.push(EXPR5);
                     pila.push(SUMA);
                 break;
-                case 36: //Expr5'
+                case 37: //Expr5'
                     pila.push(EXPR5);
                     pila.push(RESTA);
                 break;
-                case 37: 
+                case 38:
                     // Expr5' -> vacío
                 break;
-                case 38: //Term 
+                case 39: //Term
                     pila.push(TERMP);
                     pila.push(FACT);
                 break;
-                case 39: //Term'
-                    pila.push(TERM);
-                    pila.push(MULTIPLICACION);
-                break;
                 case 40: //Term'
                     pila.push(TERM);
-                    pila.push(DIVISION);
+                    pila.push(MULTIPLICACION);
                 break;
                 case 41: //Term'
                     pila.push(TERM);
                     pila.push(DIVISION);
                 break;
-                case 42: 
+                case 42: //Term'
+                    pila.push(TERM);
+                    pila.push(MODULO);
+                break;
+                case 43:
                     // Term' -> vacío
                 break;
-                case 43: //Fact
+                case 44: //Fact
                     pila.push(IDENTIFICADOR);
                 break;
-                case 44: //Fact
+                case 45: //Fact
                     pila.push(CONST_ENTERA);
                 break;
-                case 45: //Fact
+                case 46: //Fact
                     pila.push(CONST_REAL);
                 break;
-                case 46: //Fact
+                case 47: //Fact
                     pila.push(CONST_NOTACION);
                 break;
-                case 47: //Fact
+                case 48: //Fact
                     pila.push(CONST_CARACTER);
                 break;
-                case 48: //Fact
+                case 49: //Fact
                     pila.push(CONST_STRING);
                 break;
-                case 49: //Fact
+                case 50: //Fact
                     pila.push(PARENTESIS_CIERRA);
                     pila.push(EXPR);
                     pila.push(PARENTESIS_ABRE);
                 break;
-                case 50: //oprel
+                case 51: //oprel
                     pila.push(IGUAL);
                 break;
-                case 51: //oprel
+                case 52: //oprel
                     pila.push(DIFERENTE);
                 break;
-                case 52: //oprel
+                case 53: //oprel
                     pila.push(MENOR);
                 break;
-                case 53: //oprel
+                case 54: //oprel
                     pila.push(MENOR_IGUAL);
                 break;
-                case 54: //oprel
+                case 55: //oprel
                     pila.push(MAYOR);
                 break;
-                case 55: //oprel
+                case 56: //oprel
                     pila.push(MAYOR_IGUAL);
                 break;
-                case 56: //Est_if
+                case 57: //Est_if
                     pila.push(EST_IFP);
                     pila.push(ESTATUTOS);
                     pila.push(PARENTESIS_CIERRA);
@@ -803,15 +834,15 @@ bool MainWindow::aCinthyaxis(){
                     pila.push(PARENTESIS_ABRE);
                     pila.push(IF);
                 break;
-                case 57: //Est_if'
+                case 58: //Est_if'
                     pila.push(ENDIF);
                     pila.push(ESTATUTOS);
                     pila.push(ELSE);
                 break;
-                case 58: //Est_if'
+                case 59: //Est_if'
                     pila.push(ENDIF);
                 break;
-                case 59: //Est_while
+                case 60: //Est_while
                     pila.push(ENDWHILE);
                     pila.push(ESTATUTOS);
                     pila.push(PARENTESIS_CIERRA);
@@ -819,7 +850,7 @@ bool MainWindow::aCinthyaxis(){
                     pila.push(PARENTESIS_ABRE);
                     pila.push(WHILE);
                 break;
-                case 60: //Est_for
+                case 61: //Est_for
                     pila.push(ENDFOR);
                     pila.push(ESTATUTOS);
                     pila.push(PARENTESIS_CIERRA);
@@ -829,118 +860,138 @@ bool MainWindow::aCinthyaxis(){
                     pila.push(PARENTESIS_ABRE);
                     pila.push(FOR);
                 break;
-                case 61: //Est_enter
+                case 62: //Est_enter
                     pila.push(ENTER);
                 break;
-                case 62: //Est_write
+                case 63: //Est_write
                     pila.push(PARENTESIS_CIERRA);
                     pila.push(D);
                     pila.push(PARENTESIS_ABRE);
                     pila.push(WRITE);
                 break;
-                case 63: //D
+                case 64: //D
                     pila.push(DP);
                     pila.push(EXPR);
                 break;
-                case 64: //D'
+                case 65: //D'
                     pila.push(D);
                     pila.push(COMA);
                 break;
-                case 65: 
+                case 66:
                     //D' -> vacío
                 break;
-                case 66: //Est_read
+                case 67: //Est_read
                     pila.push(PARENTESIS_CIERRA);
                     pila.push(E);
                     pila.push(PARENTESIS_ABRE);
                     pila.push(READ);
                 break;
-                case 67: //E
+                case 68: //E
                     pila.push(EP);
                     pila.push(IDENTIFICADOR);
                 break;
-                case 68: //E'
+                case 69: //E'
                     pila.push(E);
                     pila.push(COMA);
                 break;
-                case 69: 
+                case 70:
                     //E' -> vacío
                 break;
                 default: return produccion;
             }
         }
+        mensaje = "| ";
+        for (int i=0;i<=pila.size()-1;i++) {
+            mensaje+= QVariant(gramema(pila.at(i))).toString() + " | ";
+        }
+        std::cout << mensaje.toStdString() << std::endl;
     }
 
   }
 
-}
+
 
 
 void MainWindow::identificaReservada() {
-        if(cadena == "class"){
-            estado = CLASS;
-    } else if(cadena == "begin"){
+    std::cout << "Entro identifica reservada" << std::endl;
+    if(lexema == "class"){
+        estado = CLASS;
+        std::cout << std::to_string(CLASS) + "class" << std::endl;
+    } else if(lexema == "begin"){
         estado = BEGIN;
-    } else if (cadena == "end"){
+        std::cout << std::to_string(BEGIN) + "begin" << std::endl;
+    } else if (lexema == "end"){
         estado = END;
-    }else if (cadena == "import"){
+        std::cout << std::to_string(END) + "end" << std::endl;
+    }else if (lexema == "import"){
         estado = IMPORT;
-    }else if (cadena == "def"){
+        std::cout << std::to_string(IMPORT) + "import" << std::endl;
+    }else if (lexema == "def"){
         estado = DEF;
-    }else if (cadena == "as"){
+    }else if (lexema == "as"){
         estado = AS;
-    }else if (cadena == "integer"){
+    }else if (lexema == "integer"){
         estado = INTEGER;
-    }else if (cadena == "float"){
+    }else if (lexema == "float"){
         estado = FLOTANTE;
-    }else if (cadena == "char"){
+    }else if (lexema == "char"){
         estado = CARACTER;
-    }else if (cadena == "string"){
+    }else if (lexema == "string"){
         estado = STRING;
-    }else if (cadena == "boolean"){
+    }else if (lexema == "boolean"){
         estado = BOOLEANO;
-    }else if (cadena == "if"){
+    }else if (lexema == "if"){
         estado = IF;
-    }else if (cadena == "else"){
+    }else if (lexema == "else"){
         estado = ELSE;
-    }else if (cadena == "endif"){
+    }else if (lexema == "endif"){
         estado = ENDIF;
-    }else if (cadena == "lye"){
+    }else if (lexema == "lye"){
         estado = LYE;
-    }else if (cadena == "while"){
+    }else if (lexema == "while"){
         estado = WHILE;
-    }else if (cadena == "endwhile"){
+    }else if (lexema == "endwhile"){
         estado = ENDWHILE;
-    }else if (cadena == "for"){
+    }else if (lexema == "for"){
         estado = FOR;
-    }else if (cadena == "endfor"){
+    }else if (lexema == "endfor"){
         estado = ENDFOR;
-    }else if (cadena == "enter"){
+    }else if (lexema == "enter"){
         estado = ENTER;
-    }else if (cadena == "write"){
+    }else if (lexema == "write"){
         estado = WRITE;
-    }else if (cadena == "read"){
+    }else if (lexema == "read"){
         estado = READ;
+    }else {
+        std::cout << "No hizo nada nadita" << std::endl;
     }
 }
 
 //función pura
-int afinaToken(int estado){ //columna
+int MainWindow::afinaToken(int estado){ //columna
     switch(estado){
         case CLASS:
             return 0;
+        case IDENTIFICADOR:
+            return 1;
         case BEGIN:
             return 2;
         case END:
             return 3;
         case IMPORT:
             return 4;
-        case LYE:
+        case ID_LIBRERIA:
             return 5;
+        case DOS_PUNTOS:
+            return 6;
+        case PUNTO_COMA:
+            return 7;
         case DEF:
             return 8;
         case AS:
             return 9;
+        case COMA:
+            return 10;
         case INTEGER:
             return 11;
         case FLOTANTE:
@@ -951,6 +1002,50 @@ int afinaToken(int estado){ //columna
             return 14;
         case BOOLEANO:
             return 15;
+        case ASIGNACION:
+            return 16;
+        case OR:
+            return 17;
+        case AND:
+            return 18;
+        case NOT:
+            return 19;
+        case SUMA:
+            return 20;
+        case RESTA:
+            return 21;
+        case MULTIPLICACION:
+            return 22;
+        case DIVISION:
+            return 23;
+        case MODULO:
+            return 24;
+        case CONST_ENTERA:
+            return 25;
+        case CONST_REAL:
+            return 26;
+        case CONST_NOTACION:
+            return 27;
+        case CONST_CARACTER:
+            return 28;
+        case CONST_STRING:
+            return 29;
+        case PARENTESIS_ABRE:
+            return 30;
+        case PARENTESIS_CIERRA:
+            return 31;
+        case IGUAL:
+            return 32;
+        case DIFERENTE:
+            return 33;
+        case MENOR:
+            return 34;
+        case MENOR_IGUAL:
+            return 35;
+        case MAYOR:
+            return 36;
+        case MAYOR_IGUAL:
+            return 37;
         case IF:
             return 38;
         case ELSE:
@@ -1050,7 +1145,7 @@ QString MainWindow::gramema (int gram){
         case END:
             return "Palabra reservada: end "; 
         case IMPORT:
-            return "Palabra reservada: imrpot "; 
+            return "Palabra reservada: import ";
         case DEF:
             return "Palabra reservada:  def"; 
         case AS:
@@ -1086,7 +1181,73 @@ QString MainWindow::gramema (int gram){
         case READ:
             return "Palabra reservada: read"; 
         case LYE:
-            return "Palabra reservada: lye"; 
+            return "Palabra reservada: lye";
+        case ENOF:
+            return "Final de archivo";
+        case RESERVADA: 
+            return "Palabra reservada";
+        case IDENTIFICADOR: 
+            return "Identificador";
+        case CONST_ENTERA: 
+            return "Constante entera";
+        case CONST_REAL: 
+            return "Constante real";
+        case CONST_NOTACION: 
+            return "Constante notacion";
+        case CONST_CARACTER: 
+            return "Constante caracter";
+        case CONST_STRING: 
+            return "Constante String";
+        case SUMA: 
+            return "Suma";
+        case RESTA: 
+            return "Resta";
+        case MULTIPLICACION: 
+            return "Multiplicacion";
+        case DIVISION: 
+            return "Dvision";
+        case MODULO: 
+            return "Modulo";
+        case COMENTARIO: 
+            return "Comentario";
+        case AND: 
+            return "And";
+        case OR: 
+            return "Or";
+        case NOT: 
+            return "Not";
+        case DIFERENTE: 
+            return "Diferente";
+        case IGUAL: 
+            return "Igual";
+        case MAYOR: 
+            return "Mayor";
+        case MAYOR_IGUAL: 
+            return "Mayor igual";
+        case MENOR: 
+            return "Menor";
+        case MENOR_IGUAL: 
+            return "Menor igual";
+        case ASIGNACION: 
+            return "Asignacion";
+        case DOS_PUNTOS: 
+            return "Dos puntos";
+        case PUNTO_COMA: 
+            return "Punto y coma";
+        case PUNTO: 
+            return "Punto";
+        case PARENTESIS_ABRE: 
+            return "Parentesis que abre";
+        case PARENTESIS_CIERRA: 
+            return "Parentesis que cierra";
+        case LLAVE_ABRE: 
+            return "Llave que abre";
+        case LLAVE_CIERRA: 
+            return "Llave que cierra";
+        case ID_LIBRERIA: 
+            return "Identificador de libreria";
+        case COMA: 
+            return "Coma";
         default: return "Error";
     }
 };
@@ -1094,7 +1255,7 @@ QString MainWindow::gramema (int gram){
 QString MainWindow::errorSint(int er){
     switch (er) {
         case 600:
-        return lexema + "" +  "Error 600: 404 not found ";
+        return lexema + "" +  "Error 600: El programa debe empezar declaracion de libreria o de clase";
         case 601:
         return lexema + "" +  "Error 601: 404 not found ";
         case 602:
